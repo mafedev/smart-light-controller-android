@@ -20,21 +20,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intent2 = Intent(this, MainActivity2::class.java)
-        val intent3 = Intent(this, MainActivity2::class.java)
+        val intent = Intent(this, MainActivity2::class.java)
 
         binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p: AdapterView<*>, v: View?, pos: Int, id: Long) {
-                if (pos == 1) {
-                    startActivity(intent2)
-                } else if (pos ==2){
-                    startActivity(intent3)
+                when (pos) {
+                    1 -> { // Si selecciona el segundo elemento
+                        intent.putExtra("bombillas", 2)
+                        startActivity(intent)
+                    }
+
+                    2 -> { // Si selecciona el tercer elemento
+                        intent.putExtra("bombillas", 3)
+                        startActivity(intent)
+                    }
                 }
 
             }
+
             override fun onNothingSelected(p: AdapterView<*>) {}
         }
-
-
     }
 }
