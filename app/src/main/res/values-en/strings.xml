@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Domoticon</string>
     <string-array name="opciones_array">
@@ -5,8 +6,8 @@
         <item>2</item>
         <item>3</item>
     </string-array>
-    <string name="titulo_layouts">Panel de Control</string>
+    <string name="titulo_layouts">Control Panel</string>
     <string name="btn_apagado">OFF</string>
     <string name="btn_encendido">ON</string>
-    <string name="switch_text">Bloqueado</string>
+    <string name="switch_text">Block</string>
 </resources>

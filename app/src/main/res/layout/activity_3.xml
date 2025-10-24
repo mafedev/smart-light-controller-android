@@ -11,8 +11,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Control Panel"
-        android:textSize="40dp"
+        android:text="@string/titulo_layouts"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -57,6 +57,18 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <CheckBox
+        android:id="@+id/checkbox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@+id/img3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
         android:id="@+id/checkbox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +76,6 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/img1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toEndOf="@+id/img1"
         app:layout_constraintTop_toBottomOf="@+id/btn1"
         app:layout_constraintVertical_bias="1.0" />
@@ -77,22 +88,8 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/img2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toEndOf="@+id/img2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <CheckBox
-        android:id="@+id/checkbox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/img3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toEndOf="@+id/img3"
-        app:layout_constraintTop_toBottomOf="@+id/btn3"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
@@ -111,7 +108,7 @@
         android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OFF"
+        android:text="@string/btn_apagado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img1"
         app:layout_constraintTop_toTopOf="@+id/img1" />
@@ -120,7 +117,7 @@
         android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OFF"
+        android:text="@string/btn_apagado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img2"
         app:layout_constraintTop_toTopOf="@+id/img2" />
@@ -129,23 +126,22 @@
         android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OFF"
+        android:text="@string/btn_apagado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img3"
         app:layout_constraintTop_toTopOf="@+id/img3" />
 
-    <Switch
-        android:id="@+id/block"
-        android:layout_width="83dp"
-        android:layout_height="57dp"
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:checked="false"
-        android:textColor="#000000"
+        android:text="@string/switch_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.92"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.95" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
