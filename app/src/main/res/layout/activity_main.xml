@@ -46,7 +46,7 @@
         android:entries="@array/opciones_array"
         android:popupBackground="#1A076A"
         android:spinnerMode="dropdown"
-        android:theme="@style/spinnerTexto"
+        android:theme="@style/SpinnerTexto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

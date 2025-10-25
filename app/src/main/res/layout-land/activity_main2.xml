@@ -11,17 +11,16 @@
 
     <!-- Título -->
     <TextView
+        style="@style/estiloTitulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_layouts"
         android:textSize="40sp"
-        style="@style/estiloTitulos"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.153" />
 
     <!-- Bombillas -->
     <ImageView
@@ -30,11 +29,11 @@
         android:layout_height="109dp"
         android:src="@drawable/bulb_off"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintEnd_toStartOf="@+id/img2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.453" />
 
     <ImageView
         android:id="@+id/img2"
@@ -43,10 +42,10 @@
         android:src="@drawable/bulb_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.453" />
 
     <!-- Botones -->
     <Button
@@ -54,31 +53,29 @@
         style="@style/estiloBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:text="@string/btn_apagado"
         app:layout_constraintBottom_toTopOf="@+id/checkbox1"
+        app:layout_constraintEnd_toEndOf="@+id/img1"
         app:layout_constraintStart_toStartOf="@+id/img1"
-        app:layout_constraintTop_toBottomOf="@+id/img1"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintTop_toBottomOf="@+id/img1" />
 
     <Button
         android:id="@+id/btn2"
         style="@style/estiloBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
         android:text="@string/btn_apagado"
         app:layout_constraintBottom_toTopOf="@+id/checkbox2"
         app:layout_constraintEnd_toEndOf="@+id/img2"
-        app:layout_constraintTop_toBottomOf="@+id/img2"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintStart_toStartOf="@+id/img2"
+        app:layout_constraintTop_toBottomOf="@+id/img2" />
 
     <ImageButton
         android:id="@+id/btnRenew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/autorenew"
         android:background="@android:color/transparent"
+        android:src="@drawable/autorenew"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -94,11 +91,10 @@
         android:layout_height="wrap_content"
         android:checked="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn1"
+        app:layout_constraintStart_toStartOf="@+id/btn1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <CheckBox
         android:id="@+id/checkbox2"
@@ -107,25 +103,24 @@
         android:layout_height="wrap_content"
         android:checked="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn2"
+        app:layout_constraintStart_toStartOf="@+id/btn2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.881" />
 
     <!-- Switch -->
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch1"
+        style="@style/Switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="false"
         android:text="@string/switch_text"
-        style="@style/Switch"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintHorizontal_bias="0.963"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.955" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

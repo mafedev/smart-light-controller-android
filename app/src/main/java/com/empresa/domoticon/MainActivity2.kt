@@ -3,6 +3,7 @@ package com.empresa.domoticon
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.empresa.domoticon.databinding.Activity3Binding
@@ -22,10 +23,10 @@ class MainActivity2 : AppCompatActivity() {
                 val bombillas = arrayOf(binding.img1, binding.img2,)
                 val botones = arrayOf(binding.btn1, binding.btn2)
                 val checkboxes = arrayOf(binding.checkbox1, binding.checkbox2)
-                val btnReset = binding.btnReset
+                val btnRenew = binding.btnRenew
 
-                logicaBotones(bombillas, botones, checkboxes, btnReset)
-                intercambio(bombillas, botones, checkboxes, btnReset)
+                logicaBotones(bombillas, botones, checkboxes, btnRenew)
+                intercambio(bombillas, botones, checkboxes, btnRenew)
             }
 
             3 -> { // Si selecciono 3 bombillas, lo redirige al layout activity_3
@@ -35,15 +36,15 @@ class MainActivity2 : AppCompatActivity() {
                 val bombillas = arrayOf(binding.img1, binding.img2, binding.img3)
                 val botones = arrayOf(binding.btn1, binding.btn2, binding.btn3)
                 val checkboxes = arrayOf(binding.checkbox1, binding.checkbox2, binding.checkbox3)
-                val btnReset = binding.btnReset
+                val btnRenew = binding.btnRenew
 
-                logicaBotones(bombillas, botones, checkboxes, btnReset)
-                intercambio(bombillas, botones, checkboxes, btnReset)
+                logicaBotones(bombillas, botones, checkboxes, btnRenew)
+                intercambio(bombillas, botones, checkboxes, btnRenew)
             }
         }
     }
 
-    private fun logicaBotones(bombillas: Array<ImageView>, botones: Array<Button>, checkboxes: Array<CheckBox>, btnReset: Button) {
+    private fun logicaBotones(bombillas: Array<ImageView>, botones: Array<Button>, checkboxes: Array<CheckBox>, btnReset: ImageButton) {
         botones.forEachIndexed { i, boton ->
             boton.setOnClickListener {
                 if (boton.text == "OFF") {
@@ -66,8 +67,8 @@ class MainActivity2 : AppCompatActivity() {
         }
     }
 
-    private fun intercambio(bombillas: Array<ImageView>, botones: Array<Button>, checkboxes: Array<CheckBox>, btnReset: Button){
-        btnReset.setOnClickListener {
+    private fun intercambio(bombillas: Array<ImageView>, botones: Array<Button>, checkboxes: Array<CheckBox>, btnRenew: ImageButton){
+        btnRenew.setOnClickListener {
             var c  = 0
             checkboxes.forEach { checkbox ->
                 if (checkbox.isChecked) c++
