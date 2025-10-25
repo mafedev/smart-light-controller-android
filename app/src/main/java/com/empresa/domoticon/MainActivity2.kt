@@ -37,6 +37,7 @@ class MainActivity2 : AppCompatActivity() {
                 val btnReset = binding.btnReset
 
                 logicaBotones(bombillas, botones, checkboxes, btnReset)
+                intercambio(bombillas, botones, checkboxes, btnReset)
             }
         }
     }
@@ -60,6 +61,58 @@ class MainActivity2 : AppCompatActivity() {
                     botones[i].text = "OFF"
                     bombillas[i].setImageResource(R.drawable.bulb_off)
                 }
+            }
+        }
+    }
+
+    private fun intercambio(bombillas: Array<ImageView>, botones: Array<Button>, checkboxes: Array<CheckBox>, btnReset: Button){
+        btnReset.setOnClickListener {
+            var c  = 0
+            checkboxes.forEach { checkbox ->
+                if (checkbox.isChecked) c++
+            }
+            var boton: Button? = null
+            var boton2: Button? = null
+            var indice = 0
+
+            if(c == 2){
+                for(i in 0 until checkboxes.size) {
+                    val checkbox = checkboxes[i]
+
+                    if(checkbox.isChecked && boton == null){
+                        boton = botones[i]
+                        indice = i
+
+                        println("Boton 1: " +boton!!.text)
+                        continue
+                    }
+
+                    if(checkbox.isChecked && boton != null){
+                        boton2 = botones[i]
+                        println("Boton 2: " + boton2!!.text)
+
+                        val aux = boton.text
+                        botones[indice].text = boton2.text
+                        botones[i].text = aux
+
+
+                        println("Boton 1: " + boton!!.text)
+                        println("Boton 2: " + boton2!!.text)
+                        break
+                    }
+
+                }
+            }
+            actualizarImagenes(bombillas, botones)
+        }
+    }
+
+    private fun actualizarImagenes(bombillas: Array<ImageView>, botones: Array<Button>){
+        botones.forEachIndexed { i, boton ->
+            if (boton.text == "OFF") {
+                bombillas[i].setImageResource(R.drawable.bulb_off)
+            } else {
+                bombillas[i].setImageResource(R.drawable.bulb_on)
             }
         }
     }
