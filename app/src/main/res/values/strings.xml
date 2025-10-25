@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Domoticon</string>
+    <string name="app_name">DOMÓTICON</string>
     <string-array name="opciones_array">
-        <item> </item>
+        <item>Número de bombillas</item>
         <item>2</item>
         <item>3</item>
     </string-array>

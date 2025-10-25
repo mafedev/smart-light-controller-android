@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Domoticon</string>
+    <string name="app_name">DOMÓTICON</string>
     <string-array name="opciones_array">
-        <item> </item>
+        <item>Number of devices</item>
         <item>2</item>
         <item>3</item>
     </string-array>

@@ -5,10 +5,12 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1A076A"
     tools:context=".MainActivity2">
 
-
+    <!-- Título -->
     <TextView
+        style="@style/estiloTitulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_layouts"
@@ -20,10 +22,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.104" />
 
+    <!-- Bombillas -->
     <ImageView
         android:id="@+id/img3"
         android:layout_width="169dp"
         android:layout_height="109dp"
+        android:elevation="4dp"
         android:src="@drawable/bulb_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,6 +40,7 @@
         android:id="@+id/img1"
         android:layout_width="169dp"
         android:layout_height="109dp"
+        android:elevation="4dp"
         android:src="@drawable/bulb_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,6 +53,7 @@
         android:id="@+id/img2"
         android:layout_width="169dp"
         android:layout_height="109dp"
+        android:elevation="4dp"
         android:src="@drawable/bulb_off"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,56 +62,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.498" />
 
-    <CheckBox
-        android:id="@+id/checkbox3"
+    <!-- Botones -->
+    <ImageButton
+        android:id="@+id/btnRenew"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/img3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img3"
-        app:layout_constraintTop_toBottomOf="@+id/btn3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <CheckBox
-        android:id="@+id/checkbox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/img1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img1"
-        app:layout_constraintTop_toBottomOf="@+id/btn1"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <CheckBox
-        android:id="@+id/checkbox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/img2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/img2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
+        android:src="@drawable/autorenew"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.89" />
+        app:layout_constraintVertical_bias="0.89"  />
 
     <Button
         android:id="@+id/btn1"
+        style="@style/estiloBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_apagado"
@@ -115,6 +87,7 @@
 
     <Button
         android:id="@+id/btn2"
+        style="@style/estiloBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_apagado"
@@ -124,6 +97,7 @@
 
     <Button
         android:id="@+id/btn3"
+        style="@style/estiloBotones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_apagado"
@@ -131,8 +105,47 @@
         app:layout_constraintStart_toEndOf="@+id/img3"
         app:layout_constraintTop_toTopOf="@+id/img3" />
 
+    <!-- CheckBoxes -->
+    <CheckBox
+        android:id="@+id/checkbox3"
+        style="@style/estiloCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/img3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img3"
+        app:layout_constraintTop_toBottomOf="@+id/btn3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/checkbox1"
+        style="@style/estiloCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/img1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img1"
+        app:layout_constraintTop_toBottomOf="@+id/btn1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <CheckBox
+        android:id="@+id/checkbox2"
+        style="@style/estiloCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        app:layout_constraintBottom_toBottomOf="@+id/img2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <!-- Switch -->
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch1"
+        style="@style/Switch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="false"

@@ -1,8 +1,45 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
+    <!-- Base application theme -->
     <style name="Base.Theme.Domoticon" parent="Theme.Material3.DayNight.NoActionBar">
-<!--        <item name="android:textColor">#E9E2E2</item>-->
+            <!---->
     </style>
 
     <style name="Theme.Domoticon" parent="Base.Theme.Domoticon" />
+
+    <!-- Estilo para Spinner con texto blanco y dropdown azul oscuro -->
+    <style name="SpinnerTexto" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:popupBackground">#1A076A</item>
+    </style>
+
+    <!-- Estilo para textos principales -->
+    <style name="estiloTitulos">
+        <item name="android:textColor">#FFFF33</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:shadowColor">#FFFF99</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">25</item>
+    </style>
+
+    <!-- Estilo para botones -->
+    <style name="estiloBotones">
+        <item name="android:textColor">#FFFF33</item>
+        <item name="android:backgroundTint">#3300FFFF</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <!-- Estilo para CheckBoxes -->
+    <style name="estiloCheckbox">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:buttonTint">#FFFF33</item>
+    </style>
+
+    <!-- Estilo para Switches -->
+    <style name="Switch">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:thumbTint">#FFFF33</item>
+        <item name="android:trackTint">#3300FFFF</item>
+    </style>
 </resources>
