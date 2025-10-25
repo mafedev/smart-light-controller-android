@@ -25,6 +25,7 @@ class MainActivity2 : AppCompatActivity() {
                 val btnReset = binding.btnReset
 
                 logicaBotones(bombillas, botones, checkboxes, btnReset)
+                intercambio(bombillas, botones, checkboxes, btnReset)
             }
 
             3 -> { // Si selecciono 3 bombillas, lo redirige al layout activity_3
