@@ -71,11 +71,11 @@ class MainActivity2 : AppCompatActivity() {
             checkboxes.forEach { checkbox ->
                 if (checkbox.isChecked) c++
             }
-            var boton: Button? = null
-            var boton2: Button? = null
-            var indice = 0
 
             if(c == 2){
+                var boton: Button? = null
+                var boton2: Button? = null
+                var indice = 0
                 for(i in 0 until checkboxes.size) {
                     val checkbox = checkboxes[i]
 
@@ -83,25 +83,34 @@ class MainActivity2 : AppCompatActivity() {
                         boton = botones[i]
                         indice = i
 
-                        println("Boton 1: " +boton!!.text)
                         continue
                     }
 
                     if(checkbox.isChecked && boton != null){
                         boton2 = botones[i]
-                        println("Boton 2: " + boton2!!.text)
 
                         val aux = boton.text
                         botones[indice].text = boton2.text
                         botones[i].text = aux
 
-
-                        println("Boton 1: " + boton!!.text)
-                        println("Boton 2: " + boton2!!.text)
                         break
                     }
 
                 }
+            } else if (c == 3){
+                val btn1 = botones[0]
+                val btn2 = botones[1]
+                val btn3 = botones[2]
+
+                val aux = btn1.text
+
+                btn1.text = btn3.text
+                btn3.text = btn2.text
+                btn2.text = aux
+
+                println("Boton 1: " + btn1!!.text)
+                println("Boton 2: " + btn2!!.text)
+                println("Boton 3: " + btn3!!.text)
             }
             actualizarImagenes(bombillas, botones)
         }
