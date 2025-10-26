@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            // Este método se llama si no se selecciona nada en el Spinner, pero no lo usé
             override fun onNothingSelected(p: AdapterView<*>) {}
         }
     }
