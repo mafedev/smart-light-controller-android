@@ -11,36 +11,85 @@ import com.empresa.domoticon.databinding.Activity3Binding
 import com.empresa.domoticon.databinding.ActivityMain2Binding
 
 class MainActivity2 : AppCompatActivity() {
+
+    // nuevas propiedades para poder guardar/restaurar estado
+    private lateinit var bombillasViews: Array<ImageView>
+    private lateinit var botonesViews: Array<Button>
+    private lateinit var checkboxesViews: Array<CheckBox>
+    private lateinit var blockView: SwitchCompat
+    private var numBombillas = 0
+
+    companion object {
+        private const val KEY_BUTTON_TEXTS = "key_button_texts"
+        private const val KEY_CHECKBOXES = "key_checkboxes"
+        private const val KEY_BLOCK = "key_block"
+        private const val KEY_NUM_BOMBILLAS = "key_num_bombillas"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val numBombillas = intent.getIntExtra("bombillas", 0)
+        numBombillas = intent.getIntExtra("bombillas", 0)
 
         when (numBombillas) {
             2 -> { // Si selecciono 2 bombillas, lo redirige al layout activity_main_2
                 val binding = ActivityMain2Binding.inflate(layoutInflater)
                 setContentView(binding.root)
 
-                val bombillas = arrayOf(binding.img1, binding.img2)
-                val botones = arrayOf(binding.btn1, binding.btn2)
-                val checkboxes = arrayOf(binding.checkbox1, binding.checkbox2)
+                // asigno a las propiedades para poder guardarlas después
+                bombillasViews = arrayOf(binding.img1, binding.img2)
+                botonesViews = arrayOf(binding.btn1, binding.btn2)
+                checkboxesViews = arrayOf(binding.checkbox1, binding.checkbox2)
                 val btnRenew = binding.btnRenew
-                val block = binding.switch1
+                blockView = binding.switch1
 
-                logicaBotones(bombillas, botones, checkboxes, btnRenew, block)
+                // restaura si venía savedInstanceState
+                if (savedInstanceState != null && savedInstanceState.getInt(KEY_NUM_BOMBILLAS, numBombillas) == numBombillas) {
+                    val textos = savedInstanceState.getStringArray(KEY_BUTTON_TEXTS)
+                    val checks = savedInstanceState.getBooleanArray(KEY_CHECKBOXES)
+                    val bloqueado = savedInstanceState.getBoolean(KEY_BLOCK, false)
+
+                    if (textos != null && textos.size == botonesViews.size) {
+                        for (i in botonesViews.indices) botonesViews[i].text = textos[i]
+                    }
+                    if (checks != null && checks.size == checkboxesViews.size) {
+                        for (i in checkboxesViews.indices) checkboxesViews[i].isChecked = checks[i]
+                    }
+                    blockView.isChecked = bloqueado
+
+                    actualizarImagenes(bombillasViews, botonesViews)
+                }
+
+                logicaBotones(bombillasViews, botonesViews, checkboxesViews, btnRenew, blockView)
             }
 
             3 -> { // Si selecciono 3 bombillas, lo redirige al layout activity_3
                 val binding = Activity3Binding.inflate(layoutInflater)
                 setContentView(binding.root)
 
-                val bombillas = arrayOf(binding.img1, binding.img2, binding.img3)
-                val botones = arrayOf(binding.btn1, binding.btn2, binding.btn3)
-                val checkboxes = arrayOf(binding.checkbox1, binding.checkbox2, binding.checkbox3)
+                bombillasViews = arrayOf(binding.img1, binding.img2, binding.img3)
+                botonesViews = arrayOf(binding.btn1, binding.btn2, binding.btn3)
+                checkboxesViews = arrayOf(binding.checkbox1, binding.checkbox2, binding.checkbox3)
                 val btnRenew = binding.btnRenew
-                val block = binding.switch1
+                blockView = binding.switch1
 
-                logicaBotones(bombillas, botones, checkboxes, btnRenew, block)
+                if (savedInstanceState != null && savedInstanceState.getInt(KEY_NUM_BOMBILLAS, numBombillas) == numBombillas) {
+                    val textos = savedInstanceState.getStringArray(KEY_BUTTON_TEXTS)
+                    val checks = savedInstanceState.getBooleanArray(KEY_CHECKBOXES)
+                    val bloqueado = savedInstanceState.getBoolean(KEY_BLOCK, false)
+
+                    if (textos != null && textos.size == botonesViews.size) {
+                        for (i in botonesViews.indices) botonesViews[i].text = textos[i]
+                    }
+                    if (checks != null && checks.size == checkboxesViews.size) {
+                        for (i in checkboxesViews.indices) checkboxesViews[i].isChecked = checks[i]
+                    }
+                    blockView.isChecked = bloqueado
+
+                    actualizarImagenes(bombillasViews, botonesViews)
+                }
+
+                logicaBotones(bombillasViews, botonesViews, checkboxesViews, btnRenew, blockView)
             }
         }
     }
@@ -114,7 +163,6 @@ class MainActivity2 : AppCompatActivity() {
                     btn2.text = aux
                 }
                 actualizarImagenes(bombillas, botones) // Luego de hacer el cambio del texto, se actualizan las imágenes
-                }
             }
         }
     }
@@ -130,3 +178,23 @@ class MainActivity2 : AppCompatActivity() {
             }
         }
     }
+
+    // se uarda el estado antes de destruir la actividad
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putInt(KEY_NUM_BOMBILLAS, numBombillas)
+
+        if (::botonesViews.isInitialized) {
+            val textos = botonesViews.map { it.text.toString() }.toTypedArray()
+            outState.putStringArray(KEY_BUTTON_TEXTS, textos)
+        }
+        if (::checkboxesViews.isInitialized) {
+            val checks = BooleanArray(checkboxesViews.size) { i -> checkboxesViews[i].isChecked }
+            outState.putBooleanArray(KEY_CHECKBOXES, checks)
+        }
+        if (::blockView.isInitialized) {
+            outState.putBoolean(KEY_BLOCK, blockView.isChecked)
+        }
+    }
+}
