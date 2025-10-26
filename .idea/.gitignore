@@ -1,3 +1,39 @@
-# Default ignored files
-/shelf/
-/workspace.xml
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration files (IDE-specific)
+local.properties
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/caches/
+.idea/deploymentTargetSelector.xml   # Evita subir configuraciones de emulador
+.idea/libraries/
+.idea/modules.xml
+.idea/.name
+
+# Android Studio captures and logs
+captures/
+output.json
+
+# IntelliJ
+*.iws
+*.ipr
+*.iml
+
+# Signing files
+*.jks
+*.keystore
+
+# Misc
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Windows
+Thumbs.db
