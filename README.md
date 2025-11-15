@@ -3,8 +3,6 @@
 ## Descripción
 **Domóticon** es una aplicación Android que permite gestionar de manera remota el encendido y apagado de luces en casa, simulando actividad cuando no estás presente. La aplicación ofrece un control sencillo de 2 o 3 dispositivos, con una interfaz adaptable a diferentes orientaciones y soporte multilingüe (español e inglés).
 
----
-
 ## Funcionalidades
 
 ### Pantalla Inicial
@@ -42,8 +40,6 @@
   - Layouts adaptativos para Portrait y Landscape
   - SharedPreferences para persistencia de datos
   - Recursos multilingüe (strings.xml)
-
----
 
 ## Cómo ejecutar la aplicación
 1. Abrir el proyecto en **Android Studio**.
