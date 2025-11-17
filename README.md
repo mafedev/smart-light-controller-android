@@ -34,12 +34,9 @@
 - **Lenguaje:** Kotlin
 - **Plataforma:** Android Studio
 - **Componentes principales:**
-  - Activities
-  - Spinner
-  - Button, Switch, CheckBox
   - Layouts adaptativos para Portrait y Landscape
-  - SharedPreferences para persistencia de datos
-  - Recursos multilingüe (strings.xml)
+  - Persistencia de datos
+  - Recursos multilingüe
 
 ## Cómo ejecutar la aplicación
 1. Abrir el proyecto en **Android Studio**.
